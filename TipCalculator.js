@@ -1,15 +1,16 @@
 function calculateTip() {
 
     //getElementById() method returns the element value with specified ID
-    var billAmount = +document.getElementById("billAmount").value;
-    var serviceQuality = +document.getElementById("serviceQuality").value;
-    
+    var billAmount = document.getElementById("billAmount").value;
+    var serviceQuality = document.getElementById("serviceQuality").value;
+        
     //Tip Calculation
-    if (isNaN(billAmount)) {
+    if (isNaN(billAmount) || billAmount == '') {
         document.getElementById("tipTotal").innerHTML = "Please enter your bill amount";
+        document.getElementById("billTotal").innerHTML = "";
     } else {
-        tipTotal = billAmount * serviceQuality;
-        billTotal = billAmount + tipTotal;
+       var tipTotal = billAmount * serviceQuality;
+       var billTotal = (+billAmount) + (+tipTotal);
     }
      
     //Display  Tip
