@@ -60,14 +60,13 @@ button {
 }
 
 button:hover {
-   background: darkbrown;
+   background: crimson;
    border-bottom-color: #000;
 }
 
 button:active {
-   position: relative;
-   top: 1px; 
-   left: 1px;
+   background-color: #3e8e41;
+   transform: translateY(4px);
 }
 
 #totalTip {
