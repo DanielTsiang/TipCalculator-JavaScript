@@ -1,33 +1,38 @@
+//Calculate Tip
 function calculateTip() {
-
-    //getElementById() method returns the element value with specified ID
     var billAmount = document.getElementById("billAmount").value;
     var serviceQuality = document.getElementById("serviceQuality").value;
-        
-    //Tip Calculation
-    if (isNaN(billAmount) || billAmount == '') {
-        document.getElementById("tipTotal").innerHTML = "Please enter your bill amount";
-        document.getElementById("billTotal").innerHTML = "";
-    } else {
-       var tipTotal = billAmount * serviceQuality;
-       var billTotal = (+billAmount) + (+tipTotal);
+    var numOfPeople = document.getElementById("totalPeople").value;
+  
+    //validate input
+    if (billAmount === "" || serviceQuality == 0) {
+      alert("Error: Please enter bill amount and select service quality");
+      return;
     }
-     
-    //Display  Tip
-    if (isNaN(serviceQuality)) {
-        document.getElementById("tipTotal").innerHTML = "Please select a service quality option from the dropdown menu";
+    //Check to see if this input is empty or less than or equal to 1
+    if (numOfPeople === "" || numOfPeople <= 1) {
+      numOfPeople = 1;
+      document.getElementById("each").style.display = "none";
     } else {
-        document.getElementById("tipTotal").innerHTML = `£${tipTotal.toFixed(2)}`;
+      document.getElementById("each").style.display = "block";
     }
-    
-    //Display Bill Total
-    if (isNaN(serviceQuality)) {
-        document.getElementById("billTotal").innerHTML = "";
-    } else {
-        document.getElementById("billTotal").innerHTML = `£${billTotal.toFixed(2)}`;
-    }
+  
+    //Calculate tip
+    var total = (billAmount * serviceQuality) / numOfPeople;
+    //round to two decimal places
+    total = Math.round(total * 100) / 100;
+    //next line allows us to always have two digits after decimal point
+    total = total.toFixed(2);
+    //Display the tip
+    document.getElementById("totalTip").style.display = "block";
+    document.getElementById("tip").innerHTML = total;
 }
 
+//Hide the tip amount on load
+document.getElementById("totalTip").style.display = "none";
+document.getElementById("each").style.display = "none";
+
+//click to call function
 document.getElementById("calculate").onclick = function() {
-    calculateTip();
-}
+  calculateTip();
+};
