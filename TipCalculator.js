@@ -5,14 +5,17 @@ function calculateTip() {
     var numOfPeople = document.getElementById("totalPeople").value;
   
     //validate input
-    if (billAmount === "" || serviceQuality == 0) {
-      alert("Error: Please enter bill amount and select service quality");
+    if (billAmount === "" || isNaN(billAmount) || serviceQuality == 0) {
+      alert("Error: Please enter a valid bill number and select service quality");
       return;
     }
-    //Check to see if this input is empty or less than or equal to 1
-    if (numOfPeople === "" || numOfPeople <= 1) {
+    //Check to see if this input is empty, or less than or equal to 1, or valid
+    if (numOfPeople === "" || numOfPeople <= 1 ) {
       numOfPeople = 1;
       document.getElementById("each").style.display = "none";
+    } else if (isNaN(numOfPeople)) {
+      alert("Error: Please enter a valid number");
+      return;
     } else {
       document.getElementById("each").style.display = "block";
     }
