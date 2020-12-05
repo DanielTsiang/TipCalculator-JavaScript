@@ -1,18 +1,19 @@
 body {
     background: #f2f2f2;
     color: brown;
+    font-size: 20px;
 }
 
 #container {
-   width: 250px;
-   margin: 10px auto; 
+   width: 380px;
+   margin: 100px auto; 
    background: #fff;
    padding: 20px;
    box-sizing: border-box;
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    -o-border-radius: 5px;
-   border-radius: 5px;
+   border-radius: 20px;
    box-shadow: 0 8px 30px -8px #000;
 }
 
@@ -22,6 +23,8 @@ h1 {
    padding: 10px 0 0;
    margin-bottom: 10px;
    padding-bottom: 10px;
+   font-size: 35px;
+   font-weight: bold;
 }
 
 label {
@@ -49,7 +52,9 @@ button {
    background: brown; 
    width: 220px;
    padding: 10px;
-   font-size: 18px;
+   display: block;
+   margin: 10px auto;
+   font-size: 20px;
    color: white;
    border: none;
    -webkit-border-radius: 1px;
