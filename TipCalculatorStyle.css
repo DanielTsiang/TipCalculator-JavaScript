@@ -5,7 +5,7 @@ body {
 }
 
 #container {
-   width: 380px;
+   width: 400px;
    margin: 100px auto; 
    background: #fff;
    padding: 20px;
@@ -27,6 +27,10 @@ h1 {
    font-weight: bold;
 }
 
+p {
+   margin: 2px
+}
+
 label {
     padding: 10px 0;
     display: block;
@@ -34,8 +38,8 @@ label {
 
 form input{
     width: 90px;
-    padding: 10px;
-    margin: 5px 5px 0 0;
+    padding: 5px;
+    margin: 8px 5px 0 0;
 }
 
 #totalPeople {
@@ -78,27 +82,18 @@ button:active {
    transform: translateY(4px);
 }
 
-#totalTip {
-   font-size:30px; 
-   text-align: center;
-}
-
-#totalTip:before {
-   content: "Tip amount"; 
-   display: block;
-   text-align: center;
-   font-size: 20px;
-   font-weight: bold;
+#totals {
+   font-size:20px; 
+   text-align: left;
    margin-top: 5px;
 }
 
 span {
-   font-size: 30px; 
+   font-size: 20px; 
 }
 
 small {
-   display: block; 
-   font-size: 20px;
+   font-size: 18px;
    font-weight: bold;
 }
 

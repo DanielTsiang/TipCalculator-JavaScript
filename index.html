@@ -13,10 +13,10 @@
                 
                 <form>
                     <label>
-                        How much was your bill?<br>
-                        £ <input type="text" id="billAmount">
+                        <p>How much was your bill?<br>
+                        £ <input type="text" id="billAmount"></p>
                     </label>
-                    How was your service?<br>                   
+                    <p>How was your service?<br>                   
                     <select id="serviceQuality">
                        <option disabled selected value="0">-- Choose an option --</option>
                        <option value="0.3">30℅ - Outstanding</option>
@@ -24,21 +24,27 @@
                        <option value="0.15">15℅ - It was okay</option>
                        <option value="0.10">10℅ - Bad</option>
                        <option value="0.05">5℅ - Terrible</option>
-                    </select>
+                    </select></p>
                     <label>
-                        How many people are sharing the bill?<br>
-                        <input type="text" id="totalPeople"> people
+                        <p>How many people are sharing the bill?<br>
+                        <input type="text" id="totalPeople"> people</p>
                     </label>
                     <div id="buttons">
                         <button type="button" id="calculate">Calculate</button>
-                        <button type="button" id="reset">Reset</button>
-                    </div><!-- #buttons -->
+                        <button type="reset" id="reset">Reset</button>
+                    </div>
                 </form>
                 
             </div><!-- #calculator -->
-            <div id="totalTip">
-                £<span id="tip">0.00</span>
-                <small id="each">each</small>
+            <div id="totals">
+                <div id="totalTip">
+                    <p>Tip amount: <span id="tip">0.00</span>
+                    <small id="tipEach">each</small></p>
+                </div>
+                <div id="totalBill">
+                    <p>Bill amount: <span id="bill">0.00</span>
+                    <small id="billEach">each</small></p>
+                </div>
             </div>
         </div><!-- #container -->
 

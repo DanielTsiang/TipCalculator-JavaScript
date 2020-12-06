@@ -1,6 +1,8 @@
-function hideTip() {
+function hideTotals() {
   document.getElementById("totalTip").style.display = "none";
-  document.getElementById("each").style.display = "none"; 
+  document.getElementById("tipEach").style.display = "none";
+  document.getElementById("totalBill").style.display = "none";
+  document.getElementById("billEach").style.display = "none";  
 };
 
 function getInput() {
@@ -23,21 +25,29 @@ function validateInput(input) {
 
   if (input.numOfPeople === "" || input.numOfPeople <= 1 ) {
     input.numOfPeople = 1;
-    document.getElementById("each").style.display = "none";
+    document.getElementById("tipEach").style.display = "none";
+    document.getElementById("billEach").style.display = "none";
   } else {
-    document.getElementById("each").style.display = "block";
+    document.getElementById("tipEach").style.display = "inline";
+    document.getElementById("billEach").style.display = "inline";
   }
 };
 
 function calculateTip(input) {
-  var total = (input.billAmount * input.serviceQuality) / input.numOfPeople;
+  var totalTip = (input.billAmount * input.serviceQuality) / input.numOfPeople;
+  var totalBill = (input.billAmount / input.numOfPeople) + totalTip;
   //round to two decimal places
-  total = Math.round(total * 100) / 100;
+  totalTip = Math.round(totalTip * 100) / 100;
+  totalBill= Math.round(totalBill * 100) / 100;
   //next line allows us to always have two digits after decimal point
-  total = total.toFixed(2);
+  totalTip = totalTip.toFixed(2);
+  totalBill = totalBill.toFixed(2);
   //Display the tip
   document.getElementById("totalTip").style.display = "block";
-  document.getElementById("tip").innerHTML = total;
+  document.getElementById("tip").innerHTML = `£${totalTip}`;
+  //Display the bill total
+  document.getElementById("totalBill").style.display = "block";
+  document.getElementById("bill").innerHTML = `£${totalBill}`;
 };
 
 function TipCalculator() {
@@ -50,14 +60,16 @@ function TipCalculator() {
 
 function reset() {
   document.getElementById("totalTip").style.display = "none";
-  document.getElementById("each").style.display = "none"; 
+  document.getElementById("tipEach").style.display = "none";
+  document.getElementById("totalBill").style.display = "none";
+  document.getElementById("billEach").style.display = "none"; 
   billAmountValue = document.getElementById("billAmount").value = "";
   serviceQualityValue = document.getElementById("serviceQuality").value = 0;
   numOfPeopleValue = document.getElementById("totalPeople").value = "";
 };
 
 //Hide the tip amount on load
-hideTip();
+hideTotals();
 
 //click to call TipCalculator function
 document.getElementById("calculate").onclick = function() {
