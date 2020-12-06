@@ -5,7 +5,7 @@ A JavaScript tip calculator styled with CSS.
 
 ### Example
 ![Javascript Tip Calculator](https://user-images.githubusercontent.com/74436899/101270031-cbcae700-376c-11eb-9e86-55b235a04ad4.png "JavaScript Tip Calculator")
-![Tip Calculated](https://user-images.githubusercontent.com/74436899/101270110-c3bf7700-376d-11eb-96ed-191b5b9738ed.png "Tip Calculated")
+![Tip Calculated](https://user-images.githubusercontent.com/74436899/101270135-19941f00-376e-11eb-92b3-79a3046dd7b3.png "Tip Calculated")
 
 ### Technologies Used
 * HTML
