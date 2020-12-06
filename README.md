@@ -1,7 +1,7 @@
 # Tip Calculator
 
 ### Description
-A JavaScript tip calculator styled with CSS.
+A JavaScript tip calculator styled with CSS. Designed to work on PC and mobile devices.
 
 ### Example
 ![Javascript Tip Calculator](https://user-images.githubusercontent.com/74436899/101270031-cbcae700-376c-11eb-9e86-55b235a04ad4.png "JavaScript Tip Calculator")
@@ -17,7 +17,7 @@ A JavaScript tip calculator styled with CSS.
 * Utilise Javascript to calculate and display tip.
 * Users should be able to enter a bill total, select a service quality rating, and the number of people splitting the bill.
 * Input data type is validated. If the user enters numbers, the tip is calculated; if not, an error message is displayed.
-* Use CSS to style a simple application.
+* Use CSS to style a simple application which can be viewed on both PC and mobile devices.
 
 ### Getting Started
 1. Visit the web page [here](https://daniel-tsiang-tip-calculator.netlify.app/).
