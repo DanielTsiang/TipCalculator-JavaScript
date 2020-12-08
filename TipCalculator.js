@@ -6,25 +6,26 @@ function hideTotals() {
 };
 
 function getInput() {
-  const billAmountValue = document.getElementById("billAmount").value;
-  const serviceQualityValue = document.getElementById("serviceQuality").value;
-  const numOfPeopleValue = document.getElementById("totalPeople").value;
-  return {billAmount: billAmountValue, serviceQuality: serviceQualityValue, numOfPeople: numOfPeopleValue};
+  const billAmount = document.getElementById("billAmount").value;
+  const serviceQuality = document.getElementById("serviceQuality").value;
+  const numOfPeople = document.getElementById("totalPeople").value;
+  return [billAmount, serviceQuality, numOfPeople];
 };
 
 function validateInput(input) {
-  if (input.billAmount === "" || isNaN(input.billAmount) || input.serviceQuality == 0) {
+  const [billAmount, serviceQuality, numOfPeople] = input;
+  if (billAmount === "" || isNaN(billAmount) || serviceQuality == 0) {
     alert("Error: Please enter a valid bill number and select service quality");
     return false;
   }
 
-  if (isNaN(input.numOfPeople)) {
+  if (isNaN(.numOfPeople)) {
     alert("Error: Please enter a valid number");
     return false;
   }
 
-  if (input.numOfPeople === "" || input.numOfPeople <= 1 ) {
-    input.numOfPeople = 1;
+  if (numOfPeople === "" || numOfPeople <= 1 ) {
+    numOfPeople = 1;
     document.getElementById("tipEach").style.display = "none";
     document.getElementById("billEach").style.display = "none";
   } else {
@@ -34,8 +35,9 @@ function validateInput(input) {
 };
 
 function calculateTip(input) {
-  var totalTip = (input.billAmount * input.serviceQuality) / input.numOfPeople;
-  var totalBill = (input.billAmount / input.numOfPeople) + totalTip;
+  const [billAmount, serviceQuality, numOfPeople] = input;
+  var totalTip = (billAmount * serviceQuality) / numOfPeople;
+  var totalBill = (billAmount / numOfPeople) + totalTip;
   //round to two decimal places
   totalTip = Math.round(totalTip * 100) / 100;
   totalBill= Math.round(totalBill * 100) / 100;
@@ -54,7 +56,7 @@ function TipCalculator() {
   const input = getInput();
   var validation = validateInput(input);
   if (validation !== false) {
-    calculateTip(input);
+    calculateTip();
   }
 };
 
