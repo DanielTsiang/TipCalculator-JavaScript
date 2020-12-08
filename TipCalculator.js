@@ -19,7 +19,7 @@ function validateInput(input) {
     return false;
   }
 
-  if (isNaN(.numOfPeople)) {
+  if (isNaN(numOfPeople)) {
     alert("Error: Please enter a valid number");
     return false;
   }
