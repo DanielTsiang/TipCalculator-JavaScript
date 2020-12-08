@@ -56,7 +56,7 @@ function TipCalculator() {
   const input = getInput();
   var validation = validateInput(input);
   if (validation !== false) {
-    calculateTip();
+    calculateTip(input);
   }
 };
 
