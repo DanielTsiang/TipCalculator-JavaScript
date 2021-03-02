@@ -8,12 +8,12 @@ function hideTotals() {
 function getInput() {
   const billAmount = document.getElementById("billAmount").value;
   const serviceQuality = document.getElementById("serviceQuality").value;
-  let numOfPeople = document.getElementById("totalPeople").value;
+  var numOfPeople = document.getElementById("totalPeople").value;
   return [billAmount, serviceQuality, numOfPeople];
 };
 
 function validateInput(input) {
-  let [billAmount, serviceQuality, numOfPeople] = input;
+  var [billAmount, serviceQuality, numOfPeople] = input;
   if (billAmount === "" || isNaN(billAmount) || serviceQuality == 0) {
     alert("Error: Please enter a valid bill number and select service quality");
     return false;
