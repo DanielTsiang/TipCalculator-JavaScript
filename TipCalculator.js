@@ -8,7 +8,7 @@ function hideTotals() {
 function getInput() {
   const billAmount = document.getElementById("billAmount").value;
   const serviceQuality = document.getElementById("serviceQuality").value;
-  const numOfPeople = document.getElementById("totalPeople").value;
+  let numOfPeople = document.getElementById("totalPeople").value;
   return [billAmount, serviceQuality, numOfPeople];
 };
 
