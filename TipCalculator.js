@@ -2,18 +2,21 @@ function hideTotals() {
   document.getElementById("totalTip").style.display = "none";
   document.getElementById("tipEach").style.display = "none";
   document.getElementById("totalBill").style.display = "none";
-  document.getElementById("billEach").style.display = "none";  
+  document.getElementById("billEach").style.display = "none";
 };
 
 function getInput() {
   const billAmount = document.getElementById("billAmount").value;
   const serviceQuality = document.getElementById("serviceQuality").value;
-  var numOfPeople = document.getElementById("totalPeople").value;
+  let numOfPeople = document.getElementById("totalPeople").value;
+  if (numOfPeople === "" || numOfPeople <= 1 ) {
+    numOfPeople = 1;
+  }
   return [billAmount, serviceQuality, numOfPeople];
 };
 
 function validateInput(input) {
-  var [billAmount, serviceQuality, numOfPeople] = input;
+  const [billAmount, serviceQuality, numOfPeople] = input;
   if (billAmount === "" || isNaN(billAmount) || serviceQuality == 0) {
     alert("Error: Please enter a valid bill number and select service quality");
     return false;
@@ -24,8 +27,7 @@ function validateInput(input) {
     return false;
   }
 
-  if (numOfPeople === "" || numOfPeople <= 1 ) {
-    numOfPeople = 1;
+  if (numOfPeople === 1 ) {
     document.getElementById("tipEach").style.display = "none";
     document.getElementById("billEach").style.display = "none";
   } else {
@@ -64,7 +66,7 @@ function reset() {
   document.getElementById("totalTip").style.display = "none";
   document.getElementById("tipEach").style.display = "none";
   document.getElementById("totalBill").style.display = "none";
-  document.getElementById("billEach").style.display = "none"; 
+  document.getElementById("billEach").style.display = "none";
   billAmountValue = document.getElementById("billAmount").value = "";
   serviceQualityValue = document.getElementById("serviceQuality").value = 0;
   numOfPeopleValue = document.getElementById("totalPeople").value = "";
@@ -82,4 +84,3 @@ document.getElementById("calculate").onclick = function() {
 document.getElementById("reset").onclick = function() {
   reset();
 };
-
