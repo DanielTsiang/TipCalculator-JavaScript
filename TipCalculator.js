@@ -8,7 +8,7 @@ function hideTotals() {
 function getInput() {
   const billAmount = document.getElementById("billAmount").value;
   const serviceQuality = document.getElementById("serviceQuality").value;
-  const numOfPeople = document.getElementById("totalPeople").value;
+  let numOfPeople = document.getElementById("totalPeople").value;
   return [billAmount, serviceQuality, numOfPeople];
 };
 
@@ -36,8 +36,8 @@ function validateInput(input) {
 
 function calculateTip(input) {
   const [billAmount, serviceQuality, numOfPeople] = input;
-  var totalTip = (billAmount * serviceQuality) / numOfPeople;
-  var totalBill = (billAmount / numOfPeople) + totalTip;
+  let totalTip = (billAmount * serviceQuality) / numOfPeople;
+  let totalBill = (billAmount / numOfPeople) + totalTip;
   //round to two decimal places
   totalTip = Math.round(totalTip * 100) / 100;
   totalBill= Math.round(totalBill * 100) / 100;
@@ -53,8 +53,8 @@ function calculateTip(input) {
 };
 
 function TipCalculator() {
-  const input = getInput();
-  var validation = validateInput(input);
+  let input = getInput();
+  let validation = validateInput(input);
   if (validation !== false) {
     calculateTip(input);
   }
