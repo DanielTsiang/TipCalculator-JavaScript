@@ -4,8 +4,8 @@
 A JavaScript tip calculator styled with CSS. Designed to work on PC and mobile devices.
 
 ### Example
-![Javascript Tip Calculator](https://user-images.githubusercontent.com/74436899/101270031-cbcae700-376c-11eb-9e86-55b235a04ad4.png "JavaScript Tip Calculator")
-![Tip Calculated](https://user-images.githubusercontent.com/74436899/101270135-19941f00-376e-11eb-92b3-79a3046dd7b3.png "Tip Calculated")
+![Javascript Tip Calculator](https://user-images.githubusercontent.com/74436899/109734400-ddc7f480-7bb8-11eb-89c4-ff7ac38ba289.png "JavaScript Tip Calculator")
+![Tip Calculated](https://user-images.githubusercontent.com/74436899/109734480-f801d280-7bb8-11eb-8c79-0895eb7e2ea2.png "Tip Calculated")
 
 ### Technologies Used
 * HTML
