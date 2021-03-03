@@ -1,7 +1,7 @@
 # Tip Calculator
 
 ### Description
-A JavaScript tip calculator styled with CSS. Designed to work on PC and mobile devices.
+A tip calculator built using JavaScript and styled with CSS. Designed to work on PC and mobile devices.
 
 ### Example
 ![Javascript Tip Calculator](https://user-images.githubusercontent.com/74436899/109734400-ddc7f480-7bb8-11eb-89c4-ff7ac38ba289.png "JavaScript Tip Calculator")
