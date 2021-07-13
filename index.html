@@ -4,19 +4,25 @@
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
         <title>Tip Calculator</title>
         <link rel="stylesheet" href="TipCalculatorStyle.css">
+
+        <!-- Import jQuery -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!-- Import autoNumeric script -->
+        <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.6.0/dist/autoNumeric.min.js" integrity="sha256-3Wb3op3+AoWpYw7gTNYr1TgugE+UImzilAi5nI2Oqvw=" crossorigin="anonymous"></script>
     </head>
     <body>
         <div id="container">
             <h1>Tip Calculator</h1>
-            
+
             <div id="calculator">
-                
+
                 <form>
                     <label>
                         <p>How much was your bill?<br>
-                        £ <input type="text" id="billAmount" autofocus></p>
+                        £ <input type="text" inputmode="decimal" id="billAmount" placeholder="bill amount" autofocus required autocomplete="off"></p>
                     </label>
-                    <p>How was your service?<br>                   
+                    <p>How was your service?<br>
                     <select id="serviceQuality">
                        <option disabled selected value="0">-- Choose an option --</option>
                        <option value="0.3">30℅ - Outstanding</option>
@@ -27,14 +33,14 @@
                     </select></p>
                     <label>
                         <p>How many people are sharing the bill?<br>
-                        <input type="text" id="totalPeople"> people</p>
+                        <input type="text" inputmode="decimal" id="totalPeople" placeholder="number of" autocomplete="off"> people</p>
                     </label>
                     <div id="buttons">
                         <button type="button" id="calculate">Calculate</button>
                         <button type="reset" id="reset">Reset</button>
                     </div>
                 </form>
-                
+
             </div><!-- #calculator -->
             <div id="totals">
                 <div id="totalTip">
